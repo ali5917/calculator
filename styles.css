@@ -31,7 +31,10 @@ body {
     width: 500px;
     margin-bottom: 10px;
     background-color: black;
-    border: solid 2px rgb(179, 179, 2); 
+    border: solid 2px white;
+    border: solid 3px rgb(211, 211, 0);
+    border-radius: 0px;
+    box-shadow: 0 0 8px 1px rgb(128, 128, 128);
 }
 
 .nav {
@@ -65,17 +68,16 @@ body {
     font-family: 'Montserrat', sans-serif;
     padding-top: 50px;
     padding-bottom: 25px;
-    border-bottom: solid 2px rgb(179, 179, 2); 
+    border-bottom: solid 2px white; 
     background-color: black;
 }
 
 .screen1 {
-    color: white;
+    color: rgb(155, 155, 155);
     font-size: 30px;
 }
 
 .screen2 {
-    /* color: white; */
     color: rgb(255, 255, 0);
     font-size: 55px;
 }
@@ -83,7 +85,8 @@ body {
 .buttons {
     display: flex;
     flex-direction: column;
-    background-color: rgb(22, 20, 0);
+    background-color: black;
+    border-radius: 12px;
 }
 
 .btns {
@@ -101,9 +104,7 @@ body {
 .btns button {
     flex: 1;
     background: none;
-    /* border: solid 1px rgb(78, 78, 57);  */
-    border: solid 1px rgb(77, 77, 28);
-    /* border: none; */
+    border: solid 1px rgb(104, 102, 102);
     color: white;
     height: 70px;
     font-size: 45px;
@@ -112,7 +113,11 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-collapse: collapse;
+    border: none;
+}
+
+.btns button:hover {
+    cursor: pointer;
 }
 
 .btns .AC, .btns .equal {
@@ -129,4 +134,49 @@ body {
     width: 40px;
     height: 40px;
     margin: 0 auto;
+}
+
+.btns .AC {
+    background-color: rgba(255, 0, 0, 0.842);
+    border-radius: 3px;
+}
+
+.btns:not(.AC) p{
+    transition: all ease 0.3s;
+}
+
+.btns button:not(.AC):hover p {
+    transform: scale(1.5);
+}
+
+.btns img {
+    transition: all ease 0.5s;
+}
+
+.btns button:not(.back):hover img {
+    transform: scale(1.5);
+}
+
+.btns .num:hover {
+    background-color: white;
+    color: black;
+}
+
+.btns .AC:hover {
+    background-color: white;
+    color: red;
+}
+
+.btns .AC:hover p {
+    transition: all ease 0.3s;
+    transform: scale(1.2);
+}
+
+.btns .sub:hover, .btns .mul:hover, .btns .add:hover, .btns .divide:hover, .btns .equal:hover {
+    background-color: rgb(20, 20, 20);
+}
+
+.btns .back:hover {
+    transition: all ease 0.3s;
+    transform: scale(1.2);
 }
