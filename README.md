@@ -1,2 +1,1 @@
-# calculator
-TOP Project
+This is a Calculator Project in JS. It is a part of The Odin Project!
