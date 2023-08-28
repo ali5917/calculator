@@ -177,6 +177,9 @@ body {
 }
 
 .btns .back:hover {
-    transition: all ease 0.3s;
     transform: scale(1.2);
+}
+
+.back {
+    transition: all ease 0.3s;
 }
