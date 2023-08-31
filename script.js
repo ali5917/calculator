@@ -12,15 +12,14 @@ let numStr = '';
 
 screen2.textContent = result;
 
-// function updateScreen() {
-//     screen1.textContent = `${firstNum} ${operator} ${secondNum}`;
-// }
-
 // handling number buttons
 numBtn.forEach(thisNum => {
     thisNum.addEventListener('click', () => {
         if (screen1.textContent === '0') {
             screen1.textContent = '';
+        }
+        if (thisNum.textContent === '.' && numStr.includes('.')) {
+            return;
         }
         screen1.textContent += thisNum.textContent;
         numStr += thisNum.textContent;
@@ -34,9 +33,8 @@ numBtn.forEach(thisNum => {
     })
 })
 
-
 // handling operation buttons
-optBtn = document.querySelectorAll('.opt');
+const optBtn = document.querySelectorAll('.opt');
 optBtn.forEach(thisOpt => {
     thisOpt.addEventListener('click', () => {
         if (operator !== null) {
@@ -49,28 +47,69 @@ optBtn.forEach(thisOpt => {
     })
 })
 
+// handling AC button
+const acBtn = document.querySelector('.AC')
+acBtn.addEventListener('click', () => {
+    screen1.textContent = '0';
+    result = '0';
+    screen2.textContent = result;
+    numStr = '';
+    firstNum = '';
+    secondNum = 0;
+    operator = null;
+    screen2.style.color = 'rgb(255,255,0)';
+})
+
+// handling back button 
+const backBtn = document.querySelector('.back')
+backBtn.addEventListener('click', () => {
+    if (screen1.textContent.length > 0) {
+        let screen1Str = screen1.textContent;
+        screen1Str = screen1Str.slice(0,-1); 
+        screen1.textContent = screen1Str;
+        if (operator === null) {
+            firstNum = firstNum.slice(0,-1);
+            numStr = firstNum;
+        }
+        else {
+            secondNum = secondNum.slice(0,-1);
+            numStr = secondNum;
+            calculate();
+        }
+    }
+})
+
+// calculation
 function calculate() {
     const num1 = parseFloat(firstNum);
     const num2 = parseFloat(secondNum); 
     console.log(num1);
     console.log(num2);
-    switch(operator) {
-        case '+':
-            result = num1 + num2;
-            screen2.textContent = result;
-            break;
-        case '-':
-            result = num1 - num2;
-            screen2.textContent = result;
-            break;
-        case '*':
-            result = num1 * num2;
-            screen2.textContent = result;
-            break;
-        case '/':
-            result = num1 / num2;
-            screen2.textContent = result;
-            break;
+    if (operator === '/' && num2 === 0) {
+        screen2.style.color = 'red';
+        result = "Error! Division by zero"
     }
+    else {
+        switch(operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                result = num1 / num2;
+                break;
+        }
+    }
+    const decimalPartLength = result.toString().split('.')[1]?.length || 0;
+    if (decimalPartLength > 3) {
+        result = result.toFixed(3);
+    }
+
+    screen2.textContent = result;
 }
 
