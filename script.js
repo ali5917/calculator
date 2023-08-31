@@ -39,6 +39,9 @@ numBtn.forEach(thisNum => {
 optBtn = document.querySelectorAll('.opt');
 optBtn.forEach(thisOpt => {
     thisOpt.addEventListener('click', () => {
+        if (operator !== null) {
+            firstNum = result;
+        }
         optName = thisOpt.id;
         operator = optName;
         screen1.textContent += operator;
