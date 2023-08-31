@@ -15,6 +15,8 @@ screen2.textContent = result;
 // handling number buttons
 numBtn.forEach(thisNum => {
     thisNum.addEventListener('click', () => {
+        screen2.style.fontSize = '55px';
+        screen1.style.fontSize = '30px';
         if (screen1.textContent === '0') {
             screen1.textContent = '';
         }
@@ -37,6 +39,8 @@ numBtn.forEach(thisNum => {
 const optBtn = document.querySelectorAll('.opt');
 optBtn.forEach(thisOpt => {
     thisOpt.addEventListener('click', () => {
+        screen2.style.fontSize = '55px';
+        screen1.style.fontSize = '30px';
         if (operator !== null) {
             firstNum = result;
         }
@@ -58,6 +62,8 @@ acBtn.addEventListener('click', () => {
     secondNum = 0;
     operator = null;
     screen2.style.color = 'rgb(255,255,0)';
+    screen2.style.fontSize = '55px';
+    screen1.style.fontSize = '30px';
 })
 
 // handling back button 
@@ -77,6 +83,13 @@ backBtn.addEventListener('click', () => {
             calculate();
         }
     }
+})
+
+// handling equal button
+const equalBtn = document.querySelector('.equal');
+equalBtn.addEventListener('click', () => {
+    screen2.style.fontSize = '85px';
+    screen1.style.fontSize = '25px';
 })
 
 // calculation
