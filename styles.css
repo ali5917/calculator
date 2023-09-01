@@ -183,3 +183,12 @@ body {
 .back {
     transition: all ease 0.3s;
 }
+
+.footer {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px 0px;
+    background-color: black;
+}

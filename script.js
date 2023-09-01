@@ -10,6 +10,7 @@ let secondNum = 0;
 let operator = null;
 let result = '0';
 let numStr = '';
+let lastNum = false;
 
 screen2.textContent = result;
 
