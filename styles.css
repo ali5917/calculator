@@ -21,6 +21,12 @@ body {
     font-family: 'Cinzel', serif;
     color: white;
     font-size: 70px;
+    transition: all ease 0.5s;
+}
+
+.heading:hover {
+    text-shadow: 0 0 15px rgba(228, 228, 127, 0.8);
+    letter-spacing: 5px;
 }
 
 .outline {
@@ -47,9 +53,16 @@ body {
     padding-right: 15px;
 }
 
-.nav p {
+.nav a {
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-decoration: none;
+    transition: all ease 0.5s;
+}
+
+.nav a:hover {
+    transform: scale(1.1);
 }
 
 .nav img {
@@ -191,4 +204,15 @@ body {
     text-align: center;
     padding: 5px 0px;
     background-color: black;
+}
+
+.git-link {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    transition: all ease 0.3s;
+}
+
+.git-link:hover {
+    color: rgb(192, 186, 186);
 }
