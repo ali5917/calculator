@@ -158,3 +158,9 @@ function scrollToHistory () {
     const target = document.getElementById('history-section');
     target.scrollIntoView();
 }
+
+function scrollToMain() {
+    const target = document.getElementById('main');
+    target.scrollIntoView();
+}
+

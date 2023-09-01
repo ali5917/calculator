@@ -58,7 +58,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: white;
     text-decoration: none;
-    transition: all ease 0.4s;
+    transition: all ease 0.3s;
 }
 
 .nav a:hover {
@@ -68,7 +68,7 @@ body {
 .nav img {
     width: 35px;
     height: 35px;
-    transition: all ease 0.4s;
+    transition: all ease 0.3s;
 }
 
 .nav img:hover {
@@ -264,7 +264,7 @@ body {
     box-shadow: 0 0 8px 1px rgb(128, 128, 128);
     background-color: black;
     letter-spacing: 3px;
-    transition: all ease 0.5s;
+    transition: all ease 0.3s;
 }
 
 .calc-history p:hover {
@@ -274,3 +274,30 @@ body {
 .history-default.hidden {
     display: none;
 }
+
+.calc-btn {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    border: 2px solid white;
+    padding: 10px 25px;
+    background: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    box-shadow: 0 0 10px 5px rgba(228, 228, 127, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.calc-btn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#history-section:hover .calc-btn {
+    display: block;
+}
+
