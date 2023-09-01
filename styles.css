@@ -248,7 +248,6 @@ body {
 
 .calc-history {
     font-family: 'Cinzel', serif;
-    /* background-color: grey; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -281,13 +280,14 @@ body {
     top: 10px;
     left: 15px;
     border: 2px solid white;
-    padding: 10px 25px;
+    padding: 10px 0px;
     background: none;
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
     box-shadow: 0 0 10px 5px rgba(228, 228, 127, 0.2);
     transition: transform 0.3s ease;
+    width: 160px;
 }
 
 .calc-btn:hover {
@@ -300,4 +300,3 @@ body {
 #history-section:hover .calc-btn {
     display: block;
 }
-

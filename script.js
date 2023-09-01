@@ -163,4 +163,3 @@ function scrollToMain() {
     const target = document.getElementById('main');
     target.scrollIntoView();
 }
-
