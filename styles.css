@@ -58,7 +58,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: white;
     text-decoration: none;
-    transition: all ease 0.5s;
+    transition: all ease 0.4s;
 }
 
 .nav a:hover {
@@ -68,6 +68,17 @@ body {
 .nav img {
     width: 35px;
     height: 35px;
+    transition: all ease 0.4s;
+}
+
+.nav img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.nav button {
+    background: none;
+    border: none;
 }
 
 .screen {
@@ -215,4 +226,51 @@ body {
 
 .git-link:hover {
     color: rgb(192, 186, 186);
+}
+
+#history-section {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    color: white;
+}
+
+#history-section h3 {
+    font-size: 70px;
+    font-family: 'Cinzel', serif;
+    transition: all ease 0.5s;
+}
+
+#history-section h3:hover {
+    text-shadow: 0 0 15px rgba(228, 228, 127, 0.8);
+    letter-spacing: 5px;
+}
+
+.calc-history {
+    font-family: 'Cinzel', serif;
+    /* background-color: grey; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    gap: 5px;
+}
+
+.calc-history p {
+    border: solid 2px rgb(251, 255, 0);
+    width: 500px;
+    box-shadow: 0 0 8px 1px rgb(128, 128, 128);
+    background-color: black;
+    letter-spacing: 3px;
+    transition: all ease 0.5s;
+}
+
+.calc-history p:hover {
+    transform: scale(1.1);
+}
+
+.history-default.hidden {
+    display: none;
 }

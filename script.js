@@ -11,6 +11,7 @@ let operator = null;
 let result = '0';
 let numStr = '';
 let lastNum = false;
+let history = '';
 
 screen2.textContent = result;
 
@@ -103,11 +104,20 @@ backBtn.addEventListener('click', () => {
 // handling equal button
 const equalBtn = document.querySelector('.equal');
 equalBtn.addEventListener('click', () => {
+    let firstScreen = screen1.textContent;
+    let secondScreen = screen2.textContent;
     clickAudio.currentTime = 0.03;
     clickAudio.play();
     screen2.style.fontSize = '85px';
     screen1.style.fontSize = '25px';
     screen2.style.fontWeight = 'bold';
+    history = `${firstScreen} = ${secondScreen}`;
+    const historyDiv = document.querySelector('.calc-history');
+    const historyItem = document.createElement('p');
+    historyItem.textContent = history;
+    historyDiv.appendChild(historyItem);
+    const historyDefaultP = document.querySelector('.history-default');
+    historyDefaultP.classList.add('hidden');
 })
 
 // calculation
@@ -144,3 +154,7 @@ function calculate() {
     screen2.textContent = result;
 }
 
+function scrollToHistory () {
+    const target = document.getElementById('history-section');
+    target.scrollIntoView();
+}
