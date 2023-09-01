@@ -47,6 +47,7 @@ optBtn.forEach(thisOpt => {
         clickAudio.play();
         screen2.style.fontSize = '55px';
         screen1.style.fontSize = '30px';
+        screen2.style.fontWeight = 'normal';
         if (operator !== null) {
             firstNum = result;
         }
@@ -72,11 +73,15 @@ acBtn.addEventListener('click', () => {
     screen2.style.color = 'rgb(255,255,0)';
     screen2.style.fontSize = '55px';
     screen1.style.fontSize = '30px';
+    screen2.style.fontWeight = 'normal';
 })
 
 // handling back button 
 const backBtn = document.querySelector('.back')
 backBtn.addEventListener('click', () => {
+    screen2.style.fontWeight = 'normal';
+    screen2.style.fontSize = '55px';
+    screen1.style.fontSize = '30px';
     clickAudio.currentTime = 0.03;
     clickAudio.play();
     if (screen1.textContent.length > 0) {
