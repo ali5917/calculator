@@ -2,6 +2,7 @@
 const numBtn = document.querySelectorAll('.num');
 const screen1 = document.querySelector('.screen1 p');
 const screen2 = document.querySelector('.screen2 p');
+const clickAudio = document.querySelector('.click-audio');
 
 // global variables
 let firstNum = '';
@@ -15,6 +16,8 @@ screen2.textContent = result;
 // handling number buttons
 numBtn.forEach(thisNum => {
     thisNum.addEventListener('click', () => {
+        clickAudio.currentTime = 0.03;
+        clickAudio.play();
         screen2.style.fontSize = '55px';
         screen1.style.fontSize = '30px';
         if (screen1.textContent === '0') {
@@ -39,6 +42,8 @@ numBtn.forEach(thisNum => {
 const optBtn = document.querySelectorAll('.opt');
 optBtn.forEach(thisOpt => {
     thisOpt.addEventListener('click', () => {
+        clickAudio.currentTime = 0.03;
+        clickAudio.play();
         screen2.style.fontSize = '55px';
         screen1.style.fontSize = '30px';
         if (operator !== null) {
@@ -54,6 +59,8 @@ optBtn.forEach(thisOpt => {
 // handling AC button
 const acBtn = document.querySelector('.AC')
 acBtn.addEventListener('click', () => {
+    clickAudio.currentTime = 0.03;
+    clickAudio.play();
     screen1.textContent = '0';
     result = '0';
     screen2.textContent = result;
@@ -69,6 +76,8 @@ acBtn.addEventListener('click', () => {
 // handling back button 
 const backBtn = document.querySelector('.back')
 backBtn.addEventListener('click', () => {
+    clickAudio.currentTime = 0.03;
+    clickAudio.play();
     if (screen1.textContent.length > 0) {
         let screen1Str = screen1.textContent;
         screen1Str = screen1Str.slice(0,-1); 
@@ -88,8 +97,11 @@ backBtn.addEventListener('click', () => {
 // handling equal button
 const equalBtn = document.querySelector('.equal');
 equalBtn.addEventListener('click', () => {
+    clickAudio.currentTime = 0.03;
+    clickAudio.play();
     screen2.style.fontSize = '85px';
     screen1.style.fontSize = '25px';
+    screen2.style.fontWeight = 'bold';
 })
 
 // calculation
